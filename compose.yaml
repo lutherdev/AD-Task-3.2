@@ -5,6 +5,8 @@ services:
     container_name: ad-meet-calend-service
     ports:
       - "8000:8000"
+    volumes:
+      - .:/var/www/html  
     develop:
       watch:
         - path: .
@@ -25,7 +27,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: rootPassword
       MONGO_INITDB_DATABASE: calendardb
     ports:
-      - "27123:27017"
+      - "6666:27017"
     volumes:
       - ad-meet-calend-mongodb:/data/db/mongodb
 
@@ -34,11 +36,11 @@ services:
     container_name: ad-meet-calend-postgresql
     restart: always
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: lutherdev
+      POSTGRES_PASSWORD: calDBstr0ng
       POSTGRES_DB: calendardb
     ports:
-      - "5678:5432"
+      - "3333:5432"
     volumes:
       - ad-meet-calend-postgresql:/data/db/postgresql
 
