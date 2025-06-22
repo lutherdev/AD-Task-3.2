@@ -149,6 +149,4 @@ AD-ProjectName
 | Title        | Purpose                                                                       | Link          |
 | ------------ | ----------------------------------------------------------------------------- | ------------- |
 | Chatgpt | Explained docker, composer, sql, router, bootstrap, database | chatgpt.com |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. |  |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. |  |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. |  |
+
