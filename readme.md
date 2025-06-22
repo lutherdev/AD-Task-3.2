@@ -57,14 +57,12 @@
 
 ## Overview
 
-<!-- TODO: To be changed -->
 <!-- The following are just sample -->
 
 A setup for using Docker, integrating MongoDB and Postgre in containers. While also using env for data security with an extension of phpdotenv for loading and passing of env values. 
 
 ### Key Components
 
-<!-- TODO: List of Key Components -->
 <!-- The following are just sample -->
 
 - Environment Configuration 
@@ -75,19 +73,14 @@ A setup for using Docker, integrating MongoDB and Postgre in containers. While a
 
 ### Technology
 
-<!-- TODO: List of Technology Used -->
 #### Language
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 
-#### Framework/Library
-
 #### Databases
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-
-#### Deployment
 
 ## Rules, Practices and Principles
 
