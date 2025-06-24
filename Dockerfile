@@ -15,11 +15,9 @@ COPY --from=composer:2.6 /usr/bin/composer /usr/local/bin/composer
 
 COPY . /var/www/html/
 
-RUN composer install
-
-RUN chown -R yourUsernameHere:developer /var/www/html
-
 USER yourUsernameHere
+
+RUN composer install
 
 EXPOSE 8000
 
