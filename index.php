@@ -1,6 +1,5 @@
 <?php
-if (!defined("HANDLERS_PATH")) define("HANDLERS_PATH", __DIR__ . "/handlers");
-if (!defined("UTILS_PATH")) define("UTILS_PATH", __DIR__ . "/utils");
+require_once 'bootstrap.php';
 
 ?>
 <html>
