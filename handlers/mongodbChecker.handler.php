@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../utils/envSetter.util.php';
+require_once 'bootstrap.php';
 
 $mongoUri = $typeConfig['mongo_uri'];
 
@@ -10,7 +10,7 @@ try {
     $command = new MongoDB\Driver\Command(["ping" => 1]);
     $mongo->executeCommand("admin", $command);
 
-    echo "✅ Connected to MongoDB successfully. WEH  <br>";
+    echo "✅ Connected to MongoDB successfully. <br>";
 } catch (MongoDB\Driver\Exception\Exception $e) {
     echo "❌ MongoDB connection failed: " . $e->getMessage() . "  <br>";
 }

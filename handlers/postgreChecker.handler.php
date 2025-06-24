@@ -1,6 +1,5 @@
 <?php
-
-require_once __DIR__ . '/../utils/envSetter.util.php';
+require_once 'bootstrap.php';
 
 // $host = $_ENV['PG_HOST'];
 // $port = $_ENV['PG_PORT'];
