@@ -26,7 +26,7 @@ $pdo = new PDO($dsn, $pgConfig['user'], $pgConfig['pass'], [
 
 echo "Connected to PostgreSQL!\n";
 
-$dbfiles = ['database/user.model.sql', 'database/task.model.sql', 'database/meeting.model.sql', 'database/meeting_users.model.sql'];
+$dbfiles = ['database/user.model.sql', 'database/meeting.model.sql', 'database/meeting_users.model.sql', 'database/task.model.sql'];
 
 foreach ($dbfiles as $dbfile){
 $sql = file_get_contents($dbfile);
