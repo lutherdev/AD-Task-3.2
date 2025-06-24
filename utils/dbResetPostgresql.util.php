@@ -1,14 +1,7 @@
 <?php
 declare(strict_types=1);
 
-// 1) Composer autoload
-require 'vendor/autoload.php';
-
-// 2) Composer bootstrap
-require 'bootstrap.php';
-
-// 3) envSetter
-require_once UTILS_PATH . '/envSetter.util.php';
+require_once 'bootstrap.php';
 
 $pgConfig = [
 'host' => $_ENV['PG_HOST'],
@@ -20,10 +13,9 @@ $pgConfig = [
 
 if (file_exists('/.dockerenv')) {
     $pgConfig['host'] = $_ENV['PG_HOST'] = 'postgresql';
-    $pgConfig['port'] = '5432'; // This matches your docker-compose service name
+    $pgConfig['port'] = '5432'; 
 } else {
-    // Running locally (e.g., Windows terminal)
-    $pgConfig['host'] = 'localhost'; // or 127.0.0.1 if preferred
+    $pgConfig['host'] = 'localhost';
 }
 
 $dsn = "pgsql:host={$pgConfig['host']};port={$pgConfig['port']};dbname={$pgConfig['db']}";
@@ -34,12 +26,17 @@ $pdo = new PDO($dsn, $pgConfig['user'], $pgConfig['pass'], [
 
 echo "Connected to PostgreSQL!\n";
 
-$sql = file_get_contents('database/user.model.sql');
+$dbfiles = ['database/user.model.sql', 'database/task.model.sql', 'database/meeting.model.sql', 'database/meeting_users.model.sql'];
+
+foreach ($dbfiles as $dbfile){
+$sql = file_get_contents($dbfile);
 if (!$sql) {
     throw new RuntimeException("❌ Could not read SQL file");
 }
 
 $pdo->exec($sql);
+}
+
 echo "✅ Tables created successfully.\n";
 
 foreach (['users', 'roles', 'groups'] as $table) {
@@ -50,5 +47,5 @@ echo "✅ Tables truncated.\n";
 
 } catch (Exception $e) {
 echo "❌ ERROR: " . $e->getMessage() . "\n";
-  exit(255); // return error code
+  exit(255);
 }
