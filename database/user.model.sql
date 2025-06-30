@@ -1,17 +1,17 @@
 CREATE TABLE IF NOT EXISTS groups(  
-    id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    id uuid NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
     name VARCHAR(255),
     description VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS roles(  
-    id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    id uuid NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
     name VARCHAR(255),
     level INT
 );
 
 CREATE TABLE IF NOT EXISTS users(  
-    id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    id uuid NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
     username VARCHAR(255),
     password VARCHAR(255),
     full_name VARCHAR(255),

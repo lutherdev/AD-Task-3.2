@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS tasks (
-    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    id uuid NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
     meetings_id INT,
     assigned_user_id INT,
     title VARCHAR(255),
