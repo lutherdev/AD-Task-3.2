@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS tasks (
     id uuid NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
-    meetings_id INT,
-    assigned_user_id INT,
+    meetings_id uuid,
+    assigned_user_id uuid,
     title VARCHAR(255),
     description TEXT,
     status VARCHAR(50), -- e.g. "Pending", "In Progress", "Done"
