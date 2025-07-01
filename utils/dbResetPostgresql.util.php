@@ -11,6 +11,7 @@ $pgConfig = [
 'pass' => $_ENV['PG_PASS'],
 ];
 
+
 if (file_exists('/.dockerenv')) {
     $pgConfig['host'] = $_ENV['PG_HOST'] = 'postgresql';
     $pgConfig['port'] = '5432'; 
@@ -29,23 +30,26 @@ echo "Connected to PostgreSQL!\n";
 $dbfiles = ['database/user.model.sql', 'database/meeting.model.sql', 'database/meeting_users.model.sql', 'database/task.model.sql'];
 
 foreach ($dbfiles as $dbfile){
+$num = 1;
 $sql = file_get_contents($dbfile);
 if (!$sql) {
-    throw new RuntimeException("❌ Could not read SQL file");
+    throw new RuntimeException("❌ Could not read the SQL file");
 }
-
+echo "✅ Tables $num created.\n";
 $pdo->exec($sql);
+$num++;
 }
 
-echo "✅ Tables created successfully.\n";
+echo "✅ All Tables created successfully.\n";
 
 foreach (['users', 'roles', 'groups'] as $table) {
     $pdo->exec("TRUNCATE TABLE {$table} RESTART IDENTITY CASCADE;");
+    echo "the table $table has been truncated. \n";
 }
 
-echo "✅ Tables truncated.\n";
+echo "✅ All Tables truncated.\n";
 
 } catch (Exception $e) {
 echo "❌ ERROR: " . $e->getMessage() . "\n";
-  exit(255);
+exit(255);
 }
