@@ -17,8 +17,8 @@ COPY . /var/www/html/
 
 USER yourUsernameHere
 
-RUN composer install
-
 EXPOSE 8000
+
+RUN composer install
 
 CMD ["php", "-S", "0.0.0.0:8000", "router.php"]
