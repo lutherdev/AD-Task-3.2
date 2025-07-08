@@ -1,8 +1,8 @@
 services:
-  ad-meet-calend:
+  ad-meet-calendar:
     build:
       context: .
-    container_name: ad-meet-calend-service
+    container_name: ad-meet-calendar-service
     ports:
       - "8000:8000"
     volumes:
@@ -21,31 +21,27 @@ services:
 
   mongodb:
     image: mongo:latest
-    container_name: ad-meet-calend-mongodb
+    container_name: ad-meet-calendar-mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: rootPassword
-      MONGO_INITDB_DATABASE: calendardb
+      MONGO_INITDB_DATABASE: calendarDB
     ports:
       - "6666:27017"
-    volumes:
-      - ad-meet-calend-mongodb:/data/db/mongodb
 
   postgresql:
     image: postgres:15
-    container_name: ad-meet-calend-postgresql
+    container_name: ad-meet-calendar-postgresql
     restart: always
     environment:
       POSTGRES_USER: lutherdev
       POSTGRES_PASSWORD: calDBstr0ng
-      POSTGRES_DB: calendardb
+      POSTGRES_DB: calendarDB
     ports:
       - "3333:5432"
-    volumes:
-      - ad-meet-calend-postgresql:/data/db/postgresql
 
 volumes:
-  ad-meet-calend-mongodb:
+  ad-meet-calendar-mongodb:
     driver: local
-  ad-meet-calend-postgresql:
+  ad-meet-calendar-postgresql:
     driver: local
