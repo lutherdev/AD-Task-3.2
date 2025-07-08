@@ -1,9 +1,13 @@
 <?php
-// the table of users are compose of following columns: id, username, first_name, last_name, password, role
 return [
-    ['username' => 'john.smith', 
-    'first_name' => 'John', 
-    'last_name' => 'Smith', 
-    'password' => 'p@ssW0rd1234', 
-    'role' => 'designer'],
+    ['username' => 'luther.dean', 
+    'first_name' => 'Luther', 
+    'last_name' => 'Dean', 
+    'password' => 'luther3', 
+    'role' => 1],
+    ['username' => 'ford.dean', 
+    'first_name' => 'Ford', 
+    'last_name' => 'Dean', 
+    'password' => 'ford4', 
+    'role' => 2],
 ];
