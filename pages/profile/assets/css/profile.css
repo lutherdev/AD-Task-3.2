@@ -1,0 +1,17 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+}
+.info-box {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 400px;
+}
+.info-box h2 {
+  margin-top: 0;
+}
+.info-box div {
+  margin: 0.5rem 0;
+}
