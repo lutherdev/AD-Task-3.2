@@ -2,7 +2,7 @@
 
 require_once 'bootstrap.php';
 
-$mongoUri = $typeConfig['mongo_uri'];
+$mongoUri = $databases['mongo_uri'];
 
 try {
     $mongo = new MongoDB\Driver\Manager($mongoUri);
