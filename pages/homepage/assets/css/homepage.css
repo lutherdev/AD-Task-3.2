@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.status-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.status-box {
+  background-color: white;
+  border: 2px solid #0c0000;
+  border-radius: 12px;
+  width: 260px;
+  min-height: 120px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.status-box:hover {
+  transform: translateY(-5px);
+}
+
+.status-box h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #444;
+}
